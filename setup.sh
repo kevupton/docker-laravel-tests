@@ -21,5 +21,3 @@ if [ ! -f "laravel/composer.json" ]; then
     php artisan migrate
     cd ..
 fi
-
-cd laravel
