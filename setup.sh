@@ -19,6 +19,5 @@ if [ ! -f "laravel/composer.json" ]; then
             > database/seeds/DatabaseSeeder.php
     fi
     php artisan vendor:publish
-    php artisan migrate
     cd ..
 fi
