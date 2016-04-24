@@ -14,8 +14,9 @@ if [ ! -f "laravel/composer.json" ]; then
             config/app.php)" > config/app.php;
     fi
     if [[ -v SEED_CLASS ]]; then
-        echo "$(awk '/public function run\(\).*?\{/ { print; print "$this->call('$SEED_CLASS');"; next }1' \
-            database/seeds/DatabaseSeeder.php)" > database/seeds/DatabaseSeeder.php;
+        echo "$(cat database/seeds/DatabaseSeeder.php | \
+            sed ':a;N;$!ba;s/\(public function run().*\?{\)/\1\n\t\$this->call('\'$SEED_CLASS\'');/g')" \
+            > database/seeds/DatabaseSeeder.php
     fi
     php artisan vendor:publish
     php artisan migrate
