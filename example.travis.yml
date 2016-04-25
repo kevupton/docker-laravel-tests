@@ -34,7 +34,7 @@ install:
   #specify the package to test
   - export PACKAGE_NAME=kevupton/bookings
   #run the setup script
-  - curl -s https://raw.githubusercontevupton/bookinnt.com/kevupton/docker-laravel-tests/master/setup.sh | bash
+  - curl -s https://raw.githubusercontent.com/kevupton/docker-laravel-tests/master/setup.sh | bash
 
 script:
   #script to setup the package for testing
