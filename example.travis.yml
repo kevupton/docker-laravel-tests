@@ -18,7 +18,7 @@ matrix:
 
 cache:
   directories:
-    - laravel
+    - laravel #only cache the laravel directory
 
 services: mysql
 
